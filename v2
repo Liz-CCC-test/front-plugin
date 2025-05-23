@@ -295,7 +295,7 @@
     <p style="font-weight: 600; margin-top: 1.25rem;">Delivery Address</p>
     <p style="color: grey; margin-top: -0.5rem;">Los Angeles, CA</p>
 
-    <a href="#" onclick="showView('view-related')" style="display: inline-block; margin-top: 2rem; color: #1a73e8; font-weight: 500;">Back</a>
+<a href="javascript:void(0);" onclick="showView('view-order-details')">logistics1111</a>
   </div>
 
   <script>
