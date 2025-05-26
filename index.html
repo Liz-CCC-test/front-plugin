@@ -231,7 +231,13 @@
       <!-- Quotes Card -->
       <div class="card">
         <div class="card-header" onclick="toggleDropdown('quotes')">
-          <span class="icon">💲 Quotes</span>
+          <span class="icon">💲 Quotes
+            <svg id="arrow-orders" xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 9l-7 7-7-7"/>
+            </svg>
+          </span>
         </div>
         <div class="dropdown-content hidden" id="quotes">
           <input type="text" class="dropdown-search" placeholder="Search quotes..." oninput="filterList(this, 'quotes')" />
@@ -246,7 +252,13 @@
       <!-- Contracts Card -->
       <div class="card">
         <div class="card-header" onclick="toggleDropdown('contracts')">
-          <span class="icon">📄 Contracts</span>
+          <span class="icon">📄 Contracts
+          <svg id="arrow-orders" xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 9l-7 7-7-7"/>
+            </svg>
+          </span>
         </div>
         <div class="dropdown-content hidden" id="contracts">
           <input type="text" class="dropdown-search" placeholder="Search contracts..." oninput="filterList(this, 'contracts')" />
@@ -315,7 +327,7 @@
 
     function toggleDropdown(id) {
       const content = document.getElementById(id);
-      const arrow = document.getElementById(arrow-${id});
+      const arrow = document.getElementById(`arrow-${id}`);
       const isHidden = content.classList.contains('hidden');
 
       if (isHidden) {
