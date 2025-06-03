@@ -369,15 +369,23 @@
     // --- Front SDK Injection Start ---
     document.addEventListener("DOMContentLoaded", () => {
       if (window.Front) {
+        console.log("Front SDK loaded. Setting up conversation listener...");
+
         window.Front.on("conversation", function (data) {
+          console.log("Front SDK conversation data:", data);
+
           const contact = (data?.contacts || [])[0];
+
           if (contact) {
             document.getElementById("customer-name").textContent = contact.name || "Unnamed Contact";
             document.getElementById("customer-email").textContent = contact.handle || "unknown@example.com";
+
             const avatarEl = document.getElementById("customer-avatar");
             if (contact.avatarUrl) {
               avatarEl.src = contact.avatarUrl;
             }
+          } else {
+            console.warn("No contact found in conversation data.");
           }
         });
       } else {
